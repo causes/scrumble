@@ -1,0 +1,23 @@
+%html
+  %head
+    %title Scrum! Yesterday's work
+    %link{:rel => "stylesheet",
+          :href => "/stylesheets/index.css",
+          :type => "text/css"}
+  %body
+    - @projects.sort_by(&:name).each do |project|
+      .project
+        %h1
+          = project.name
+          %span.count= project.active_stories(@date).size
+        - by_owner(project.active_stories(@date)).each do |owner, stories|
+          .owner_group
+            %h2= owner
+            - by_state(stories).each do |state, stories|
+              %ul
+                - stories.each do |story|
+                  %li(class="story #{simple_state(state)}")
+                    %span.state= state
+                    %span.type= story.story_type
+                    = story.name
+

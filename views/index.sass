@@ -1,0 +1,51 @@
+*
+  :font-family 'Helvetica', sans-serif
+  :margin 0px
+  :padding 0px
+body
+  :padding 20px 40px
+
+  h1
+    :background-color #B8B2B2
+    :font-size 20px
+    :padding 5px
+  h2
+    :font-size 16px
+
+  .project
+    :background-color #E8E2E2
+    :margin 10px 0px 40px
+    :padding 0px 0px 5px
+    .count
+      :color #666
+
+  .owner_group
+    :margin 10px
+    ul
+      :margin-left 10px
+    ul
+      &:first-child
+        :margin-top 5px
+
+    li.story
+      :list-style-type none
+      .type, .state
+        :color #666
+        :display inline-block
+        :font-size 10px
+        :margin-right 5px
+        :text-align right
+      .type
+        :width 40px
+      .state
+        :width 60px
+
+    li.story.new
+      .state
+        :color #D00
+    li.story.work
+      .state
+        :color #FC7B2B
+    li.story.done
+      .state
+        :color #0D0
